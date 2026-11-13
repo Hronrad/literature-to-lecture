@@ -1,11 +1,17 @@
 ---
 name: literature-to-lecture
-description: Research scientific literature and create or revise source-faithful teaching lectures, detailed single-paper handouts, and surveys. Use for technical reading, comprehensive source coverage, prerequisite explanations, and illustrated Markdown or PDF lectures; not for quick factual Q&A.
+description: Research scientific literature and create or revise source-faithful teaching lectures, detailed single-paper handouts, and surveys. Use for technical reading, comprehensive source coverage, prerequisite explanations, and illustrated lectures with readable PDFs by default; not for quick factual Q&A.
 ---
 
 # Literature to Lecture
 
 Build a bounded, auditable research corpus before writing a lecture. “Complete” means complete **within a stated question, inclusion criteria, search cutoff, and accessible evidence**, not a claim to have found every paper ever published. Respect the user's requested topic, output location, language, length, and format.
+
+## Default deliverables
+
+For a complete standalone lecture, handout, or detailed paper guide, deliver an **illustrated, readable PDF** and keep the editable source and figure assets. Start with the PDF layout in mind. A request for a lecture without a format specifies this default. Honor explicit Markdown-only, chat-only, or other format choices. For a narrow revision, update the existing deliverable in its format and regenerate its PDF when one is part of the deliverable.
+
+For full lectures, decide which central mechanisms, data flows, or comparisons need a teaching figure before drafting. See [illustrated PDF production](references/illustrated-pdf.md) for figure design and the required export checks.
 
 ## 1. Define the coverage contract
 
@@ -94,6 +100,6 @@ Run a reader-comprehension pass on every central technical section: without reop
 
 Also perform a **formula-by-formula teaching audit**: can the intended reader explain each quantity, read the expression as a sequence of operations or reasoning, and interpret its result without consulting the original paper? Include supporting and statistical formulas in this pass. Check the complete explanation chain for each central mechanism; naming symbols, verifying arithmetic, or passing the corpus script does not establish comprehension. Repair missing explanations before calling the lecture complete.
 
-Finish with a concision pass and, for PDF or other paginated output, a rendered visual pass. Remove redundant or defensive prose without removing required source content or meaningful qualifications. Inspect all pages and check dense or changed formulas, tables and diagrams at readable size. Keep headings with their opening explanation, formula introductions with the expression and local definitions, and captions with their figures. Resolve clipping, overlaps, broken math, missing labels and illegible scaling before delivery; do not make a length target by shrinking the text beyond readability.
+Finish with a concision pass and, for PDF or other paginated output, render and visually inspect every final page. The PDF is a deliverable, and a Markdown source or a successful export alone does not complete it. Remove redundant or defensive prose without removing required source content or meaningful qualifications. Inspect all pages and check dense or changed formulas, tables and diagrams at readable size. Keep headings with their opening explanation, formula introductions with the expression and local definitions, and captions with their figures. Resolve clipping, overlaps, broken math, missing labels and illegible scaling before delivery; do not make a length target by shrinking the text beyond readability.
 
 Do **not** report full completion while an in-scope work lacks inspected full text or substantive reading notes, a required original formula/figure/table remains uncovered, a formula lacks interpretation, a central method lacks an intelligible input-to-output explanation, or an important concept remains opaque. If access or evidence prevents closure, deliver the useful verified content and a precise gap list. Keep release reporting concise: state the actual scope and unresolved material issues rather than appending the internal audit trail.

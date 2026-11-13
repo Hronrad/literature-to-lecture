@@ -1,6 +1,6 @@
 # Literature to Lecture · 从文献到讲义
 
-将科学文献整理为忠于原文的教学讲义、单篇论文导读或综述，支持 Markdown 和 PDF。更适合人工智能、计算机科学、物理等理科与技术领域，但不限于这些领域。
+将科学文献整理为忠于原文的教学讲义、单篇论文导读或综述，默认交付配图 PDF，并保留可编辑源文件。更适合人工智能、计算机科学、物理等理科与技术领域，但不限于这些领域。
 
 - 获取并核查全文，保留可追溯来源。
 - 通过具体算例讲清方法、公式、图表。
@@ -10,7 +10,7 @@
 
 ---
 
-Turn scientific papers into source-faithful lectures, single-paper handouts, and surveys in Markdown or PDF. Best suited to science and technical fields such as artificial intelligence, computer science, and physics, but not limited to them.
+Turn scientific papers into source-faithful lectures, single-paper handouts, and surveys as illustrated PDFs with editable sources by default. Best suited to science and technical fields such as artificial intelligence, computer science, and physics, but not limited to them.
 
 - Retrieve and inspect full texts with traceable sources.
 - Explain methods, formulas, figures, and tables with worked examples.
