@@ -15,15 +15,13 @@ For full lectures, decide which central mechanisms, data flows, or comparisons n
 
 ## 1. Define the coverage contract
 
-### Ask the questions that affect the outline
+### Ask for the page range first
 
-For a new lecture or a substantial change in audience or scope, use the request and prior conversation to fill in the brief. Prefer one question, and group at most three when several answers would materially change the outline. Select from these prompts:
+For a new or substantially expanded lecture, ask for the page range first when the user has not specified it. Offer **about 6–10 pages**, **at most 20 pages**, and **at least 20 pages with no upper limit**, accepting a custom budget. Treat “about” as a target, “at most” as a cap, and “at least” as a minimum. Count all pages of the delivered lecture PDF, including any appendices, unless the user specifies otherwise.
 
-- **Audience and prerequisites.** Who will read it, and what can they already do? For a technical topic, offer concrete choices such as “knows basic linear algebra, new to coding theory” or “can follow the full derivation.”
-- **Purpose and depth.** What should the reader be able to do afterwards: explain the idea, present the paper, reproduce a result, or implement the method? Ask about a page or teaching-time limit if it would change the balance between examples, derivations, and implementation.
-- **Scope and deliverables.** Which papers, versions, tasks, or implementations are essential? Ask about language, output format, or a required figure style only if the preference is missing and would materially change the result.
+The goal is to explain the paper or agreed source material completely. Page count governs the presentation and pagination, not the learning goal. Budget pages for prerequisites, complete derivations, figures, and worked examples before drafting. Put longer supporting steps in a clearly linked appendix when space permits. If the budget and required coverage cannot both be met, identify the concrete conflict and ask which constraint takes priority. Do not silently drop material or shrink type to fit.
 
-Reuse answers already given. For a well-specified request or a focused edit, begin directly. For an optional preference, give a concrete default, continue source work that does not depend on the answer, and proceed with the stated assumption if the user does not respond. If the target itself is ambiguous and choosing would change the lecture, keep working on shared prerequisites while asking the user to identify it. Record the resolved audience baseline, learning goal, and scope in the working outline.
+Use prior answers. Ask about reader prerequisites, the source version, or another deliverable constraint only when it is unresolved and would change the plan. Continue reviewing sources while waiting for a page preference. If no preference arrives, choose a defensible budget for the scope and state it. For a focused edit within an existing budget, begin directly.
 
 Write down the research questions, neighboring topics that are in or out, date range, eligible publication types, and search cutoff. Choose and state a defensible scope for broad requests. Plan prerequisite concepts and likely technical branches, then refine the outline as the evidence warrants.
 
@@ -42,6 +40,8 @@ Keep inaccessible but in-scope works in an explicit **gap register** with the at
 ## 3. Deep-read one work at a time
 
 For each target original, read the problem statement, model, method/proof, results, figures, limitations and appendices; inspect cited dependencies to the extent needed to check its claims. Create one substantive note per target original. For each central claim, identify its source location and whether it is the authors' claim, a directly observed result, or your own derivation. Recompute at least the key equation, bound, complexity expression, or numerical result that carries the paper's contribution when feasible. Define every variable, units, domain, assumptions, and what the expression actually establishes. If a review, standard, or descriptive work has no single central equation, record the authoritative parameters, decision rules, or synthesis method and explain why “no central equation” is appropriate. Never invent an equation to fill a template.
+
+For each central reference or public implementation, give the reader a dedicated derivation of **why it achieves the stated goal**. Start from the source's target equation and specify its domain. Carry the governing equations through the implementation in execution order, tying each nontrivial equality or update to the corresponding register, intermediate value, or module. Explain the invariant that links the steps and show how the output and cleanup satisfy the target equation. Attribute each formula to its source or label it as a teaching derivation. Distinguish a mathematical identity, a source-verified implementation detail, and a claim supported by testing. Use an explicit interface for any internal step that the evidence does not establish.
 
 For each central **method paper**, reconstruct the method before judging it. Trace a concrete input through the actors, data or physical resources, operations, intermediate states, verification, and final output. State which step uses the paper's new idea and which steps rely on an inherited signature, network, consensus, governance, or hardware assumption. Record a small input-to-output example that can be checked by hand when the method permits one; otherwise give a faithful step trace and explain why a numeric toy case would misrepresent it. This trace belongs in the reading note, not merely in the final lecture.
 

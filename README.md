@@ -7,7 +7,7 @@
 - 对照论文和实现证据，按领域惯例绘制架构图。
 - 检查原文覆盖、读者理解和文档排版。
 
-**使用：** 将本技能添加到支持技能指令的助手中，提供论文或主题，可同时说明读者基础、学习目标和范围。技能会询问仍会影响写作规划的关键信息。详见 [SKILL.md](SKILL.md)。
+**使用：** 将本技能添加到支持技能指令的助手中，提供论文或主题，可同时说明页数、读者基础和范围。未指定页数时，技能优先询问页数范围。详见 [SKILL.md](SKILL.md)。
 
 ---
 
@@ -18,7 +18,7 @@ Turn scientific papers into source-faithful lectures, single-paper handouts, and
 - Draw architecture figures using field conventions and verified implementation details.
 - Check source coverage, reader comprehension, and document layout.
 
-**Use:** Add this skill to an assistant that supports skill instructions, provide a paper or topic, and share the audience, learning goal, and scope if known. The skill asks about missing details that would affect the outline. See [SKILL.md](SKILL.md).
+**Use:** Add this skill to an assistant that supports skill instructions, provide a paper or topic, and share the page budget, audience, and scope if known. The skill asks about the page range first if it is unspecified. See [SKILL.md](SKILL.md).
 
 附带 Python 3 文献记录核查脚本；它检查证据记录，不证明科学结论正确或文献覆盖穷尽。  
 Includes a Python 3 corpus audit script; it checks evidence bookkeeping, not scientific correctness or exhaustive coverage.
