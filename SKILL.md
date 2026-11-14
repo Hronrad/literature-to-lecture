@@ -1,6 +1,6 @@
 ---
 name: literature-to-lecture
-description: Research scientific literature and create or revise source-faithful teaching lectures, detailed single-paper handouts, and surveys. Use for technical reading, comprehensive source coverage, prerequisite explanations, and illustrated lectures with readable PDFs by default; not for quick factual Q&A.
+description: Research scientific literature and create or revise source-faithful teaching lectures, detailed single-paper handouts, and surveys. Use for technical reading, comprehensive source coverage, beginner-friendly prerequisite explanations, source-checked architecture figures, and illustrated lectures with readable PDFs by default; not for quick factual Q&A.
 ---
 
 # Literature to Lecture
@@ -15,7 +15,17 @@ For full lectures, decide which central mechanisms, data flows, or comparisons n
 
 ## 1. Define the coverage contract
 
-Write down the research questions, neighboring topics that are in or out, date range, eligible publication types, and search cutoff. If the request is broad, choose a defensible scope and state it in the deliverable; ask only for a choice that materially changes the research. Plan prerequisite concepts and likely technical branches, but let the evidence revise the outline.
+### Ask the questions that affect the outline
+
+For a new lecture or a substantial change in audience or scope, use the request and prior conversation to fill in the brief. Prefer one question, and group at most three when several answers would materially change the outline. Select from these prompts:
+
+- **Audience and prerequisites.** Who will read it, and what can they already do? For a technical topic, offer concrete choices such as “knows basic linear algebra, new to coding theory” or “can follow the full derivation.”
+- **Purpose and depth.** What should the reader be able to do afterwards: explain the idea, present the paper, reproduce a result, or implement the method? Ask about a page or teaching-time limit if it would change the balance between examples, derivations, and implementation.
+- **Scope and deliverables.** Which papers, versions, tasks, or implementations are essential? Ask about language, output format, or a required figure style only if the preference is missing and would materially change the result.
+
+Reuse answers already given. For a well-specified request or a focused edit, begin directly. For an optional preference, give a concrete default, continue source work that does not depend on the answer, and proceed with the stated assumption if the user does not respond. If the target itself is ambiguous and choosing would change the lecture, keep working on shared prerequisites while asking the user to identify it. Record the resolved audience baseline, learning goal, and scope in the working outline.
+
+Write down the research questions, neighboring topics that are in or out, date range, eligible publication types, and search cutoff. Choose and state a defensible scope for broad requests. Plan prerequisite concepts and likely technical branches, then refine the outline as the evidence warrants.
 
 Identify the target originals and the reader's prerequisites from the request and conversation. Default to complete coverage of each target original's scientific formulas, figures and tables, including its appendices and relevant supplements; honor an explicitly narrower selection. Background references used for one definition or visual convention are not automatically additional target originals. Declare that distinction before drafting, and never reclassify a requested target as background to avoid covering it.
 
@@ -65,6 +75,8 @@ Teach each central paper's mechanism **before** its limitations. Start with the 
 
 Do not assume a reader knows a prerequisite merely because the paper leaves it implicit. At first relevant use, explain what a concept is, where it sits in the system, what it consumes and produces, and why this experiment needs it. Distinguish a model's architecture, its training algorithm, the task and the evaluation procedure. Use familiar language before introducing abbreviations; do not explain one unfamiliar term solely with another. A distant glossary is not enough.
 
+For a beginner audience, start each central task with the object being worked on, its concrete input and expected output, and the success condition. Resolve the short prerequisite chain in place before introducing the real parameters or architecture. Carry one small example all the way through: give actual input values, calculate the intermediate objects, obtain the output, and explain why it satisfies the task. When a numerical example is unsuitable, trace one concrete case step by step. Then map the example’s objects to the actual paper or implementation, giving the real dimensions or assumptions where they matter. Break up the explanation with a diagram, table, or short calculation where that improves comprehension.
+
 Turn abstract experimental labels into concrete objects and operations. When a small enumerated set is central, show its actual members or a faithful compact representation, and identify how they were obtained. Distinguish supplied diagnostic inputs, naturally generated outputs and invented teaching examples. Use local examples or diagrams for spatial relationships, data flow, repeated structure and state changes; explain the parts the reader must recognize in the figure. Match depth to the reader's prerequisites, without adding unrelated tutorials or new jargon.
 
 ### Use field-standard, source-checked graphics
@@ -72,6 +84,8 @@ Turn abstract experimental labels into concrete objects and operations. When a s
 For new scientific diagrams, inspect relevant canonical paper figures or documented domain conventions before choosing the visual grammar. Use recognizable module, flow, circuit, axis, residual and repetition notation as appropriate; do not call an arbitrary decorative style an accepted standard. Prefer vector diagrams and standard plotting tools for exact architectures, equations and quantitative results. Generative illustration does not replace checking every scientific label, connection and value.
 
 Draw the actual system from the paper, code, configuration and logs. For model architectures, identify the model class and show verified inputs, dimensions, layer order, activations, normalization, branches, residual paths, repetition counts and outputs needed to understand the experiment. Keep training-only components and external tools distinct from the model's forward computation; mark hidden, readable and editable parts accurately. Do not substitute a generic Transformer, U-Net or other familiar template for the real structure, or invent unspecified details. Reuse a diagram for genuinely identical architectures and state the experimental differences.
+
+When a specific implementation, architecture, or reproducible baseline is central to the lecture, include a source-grounded architecture figure. Identify the exact version, inspect the paper and the relevant entry point, configuration or artifact, and trace the boundaries and connections at the level needed to teach it. For multiple materially different task architectures, use separate labeled panels or figures. Consult [architecture figure conventions and verification](references/illustrated-pdf.md#architecture-figures), including when the requested output is not PDF.
 
 Distinguish original figures, faithful redrawings and teaching schematics in captions; cite their sources and state substantive simplifications. Explain colors, symbols, arrows and tensor dimensions locally. Preserve original measurements, scales and uncertainty. Check individual diagrams and their final rendered size for readable text, complete panels, correct arrows and no overlaps; a polished thumbnail is not sufficient.
 
@@ -96,7 +110,7 @@ Before calling the research complete, use the manifest schema and audit in [refe
 
 Reconcile the source-coverage ledger against the original files and the final lecture: every required formula, figure, table and scientific panel must have a verified destination, and no unresolved gap may be described as covered. The existing corpus script checks evidence bookkeeping, not exhaustive source-item coverage; passing it does not replace this item-by-item check.
 
-Run a reader-comprehension pass on every central technical section: without reopening the paper, can a reader identify the key concepts, their system locations, input, ordered operations, output, one worked result, why the main equation holds, and what conclusion the source supports? Check that provided instructions, tool-assisted observations and independent inferences are not conflated. If an answer is missing, repair the local explanation. Cross-check worked results and ensure critique has not displaced the method. For long lectures, inspect every technical branch and all corrected equations or claims; the corpus audit alone is insufficient.
+Run a reader-comprehension pass on every central technical section: without reopening the paper, can a reader identify the key concepts, their system locations, input, ordered operations, output, one worked result, why the main equation holds, and what conclusion the source supports? Check that provided instructions, tool-assisted observations and independent inferences are not conflated. For beginners, verify that the reader can reproduce the example from the stated input, name the corresponding real objects, and follow the same path in the architecture figure without guessing the meaning of a box or arrow. Repair gaps in the explanation or figure before delivery. Cross-check worked results and ensure critique has not displaced the method. For long lectures, inspect every technical branch and all corrected equations or claims; the corpus audit alone is insufficient.
 
 Also perform a **formula-by-formula teaching audit**: can the intended reader explain each quantity, read the expression as a sequence of operations or reasoning, and interpret its result without consulting the original paper? Include supporting and statistical formulas in this pass. Check the complete explanation chain for each central mechanism; naming symbols, verifying arithmetic, or passing the corpus script does not establish comprehension. Repair missing explanations before calling the lecture complete.
 
